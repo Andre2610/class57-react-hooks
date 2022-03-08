@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export default function Planet(props) {
   const [planets, setPlanets] = useState(props.data);
-  console.log('My props', props);
+  // console.log('My props', props);
   return (
     <div>
       {planets &&

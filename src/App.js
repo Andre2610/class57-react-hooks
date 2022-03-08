@@ -1,6 +1,7 @@
 import Planet from './components/Planet';
 import Counter from './components/Counter';
 import data from './data/data';
+import Fetching from './components/Fetching';
 import './App.css';
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Counter data={data} />
-        <Planet data={data} />
+        {/* <Planet data={data} /> */}
+        <Fetching />
       </header>
     </div>
   );

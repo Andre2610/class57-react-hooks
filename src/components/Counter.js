@@ -1,16 +1,24 @@
 // We will have a number
 // We will 2 buttons - + & -
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function Counter() {
   const initialState = 0;
-  const [banana, potato] = useState(initialState);
+  const [counter, setCounter] = useState(initialState);
   const [like, setLike] = useState(false);
 
   const increment = () => {
-    potato(banana + 1);
+    setCounter(counter + 1);
   };
-  console.log('The new value of like', like);
+  // console.log('The new value of like', like);
+  useEffect(() => {
+    console.log('Inside the useEffect');
+    setCounter(counter + 1);
+  }, []);
+
+  console.log('Outside the useEffect');
+
   return (
     <div>
       <div>
@@ -20,10 +28,10 @@ export default function Counter() {
       </div>
       <div>
         <p>
-          <button onClick={() => potato(banana - 1)}>-</button> Our number:{' '}
-          {banana} <button onClick={increment}>+</button>
+          <button onClick={() => setCounter(counter - 1)}>-</button> Our number:{' '}
+          {counter} <button onClick={increment}>+</button>
         </p>
-        <button onClick={() => potato(initialState)}>Reset</button>
+        <button onClick={() => setCounter(initialState)}>Reset</button>
       </div>
     </div>
   );
