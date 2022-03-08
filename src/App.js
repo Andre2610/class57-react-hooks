@@ -1,22 +1,14 @@
-import logo from './logo.svg';
+import Planet from './components/Planet';
+import Counter from './components/Counter';
+import data from './data/data';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Counter data={data} />
+        <Planet data={data} />
       </header>
     </div>
   );
